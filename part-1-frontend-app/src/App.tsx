@@ -13,10 +13,6 @@ const foxShows = [
   499, // married... with children
   541, // prison break
   587, // that 70's show
-  1355, // empire
-  19809, // the resident
-  42164, // 9-1-1: lone star
-  63266, // animal control
 ]
 
 function App() {
