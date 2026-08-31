@@ -16,8 +16,8 @@ const foxShows = [
 ]
 
 function App() {
-  const [shows, setShows] = useState<Show[]>([]);
-  const [error, setError] = useState<Error | null>(null);
+  const [shows, setShows] = useState<Show[]>([])
+  const [error, setError] = useState<Error | null>(null)
 
   useEffect(() => {
     fetchShows(foxShows)
