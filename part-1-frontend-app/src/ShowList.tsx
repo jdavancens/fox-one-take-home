@@ -13,10 +13,10 @@ const byPremiereDate = (a: Show, b: Show) => {
   return a.premiered.localeCompare(b.premiered)
 }
 
-function ShowList(props: ShowListProps) {
+function ShowList({ shows }: ShowListProps) {
   return (
     <ul className="show-list">
-      {props.shows?.sort(byPremiereDate).map(({
+      {shows?.sort(byPremiereDate).map(({
         id,
         name,
         premiered,

@@ -32,8 +32,11 @@ function App() {
         <p>Composers and music supervisors</p>
       </header>
       <section>
-        {error ? <p>{error?.message}</p> : shows.length === 0 ? <progress />: <ShowList shows={shows} />}
+        {error ? <p>{error?.message}</p> : shows.length === 0 ? <progress /> : <ShowList shows={shows} />}
       </section>
+      <footer>
+        Data from <a href="https://www.tvmaze.com/api" target="_blank" >https://www.tvmaze.com/api</a>
+      </footer>
     </main>
   )
 }

@@ -38,30 +38,36 @@ const musicCrewFilter = (crewMember: CrewMember) => {
   ].includes(crewMember.type)
 }
 
-function ShowCard(props: ShowCardProps) {
+function ShowCard({
+  id,
+  image,
+  name,
+  premiered,
+  _embedded,
+}: ShowCardProps) {
   return (
     <article className="show-card">
       <div className="show-card-poster">
-        {props.image && (
-          <img src={props.image?.medium} alt={`${props.name}-image`} />
+        {image && (
+          <img src={image?.medium} alt={`${name}-image`} />
         )}
       </div>
 
       <div className="show-card-meta">
-        <h2>{props.name}</h2>
-        {props.premiered && (
+        <h2>{name}</h2>
+        {premiered && (
           <p className="premiere">
-            <time dateTime={props.premiered}> {props.premiered.slice(0, 4)}</time>
+            <time dateTime={premiered}> {premiered.slice(0, 4)}</time>
           </p>
         )}
       </div>
 
       <div className="show-card-crew">
-        {props._embedded?.crew.filter(musicCrewFilter).map((crewMember) => (
+        {_embedded?.crew.filter(musicCrewFilter).map((crewMember) => (
           <CrewMemberDetails
             key={`${crewMember.person.id}-${crewMember.type}`}
             crewMember={crewMember}
-            showId={props.id}
+            showId={id}
           />
         ))}
       </div>
