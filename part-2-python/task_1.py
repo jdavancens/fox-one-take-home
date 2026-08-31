@@ -2,11 +2,20 @@ from collections import Counter
 import string
 
 def normalize(token: str) -> str:
+    """Normalize a token.
+
+    Convert to lowercase, strip leading/trailing whitespace, strip leading/trailing punctuation.
+    """
     return token.lower().strip().strip(string.punctuation)
 
 def most_common_word(text: str, stopwords: set[str] | None = None) -> str | None:
+    """Count normalized tokens, skip stop words, and return the winner.
+    
+    Tie-breaker: first word in list.
+    """
     if text == '':
         return None
+
 
     if stopwords is None:
         stopwords = set[str]()
